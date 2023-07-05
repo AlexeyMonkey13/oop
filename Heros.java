@@ -1,4 +1,4 @@
-public class Heros {
+public class Heros implements Actions{
         int id;
         int healthLevel;
         String name;
@@ -11,7 +11,21 @@ public class Heros {
         this.healthLevel = healthLevel;
         this.name = name;
         this.tipe = tipe;
-        BaseAttack = baseAttack;
+        this.BaseAttack = baseAttack;
         this.iniciative = iniciative;
+    }
+    @Override
+    public String toString(){
+        return (name + " " + tipe + " " + healthLevel + " " + iniciative + " " + id + " " + BaseAttack);
+    }
+
+    @Override
+    public void Step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return toString();
     }
 }
