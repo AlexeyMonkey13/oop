@@ -8,6 +8,15 @@ import java.util.Random;
 //На базе описания персонажей описать простейшую иерархию классов.
 //В основной программе создать по одному экземпляру каждого класса.
 public class main_folder_oop {
+    public enum Names {
+        Name, Loli, Kolia, name, Bara, GoldD, Monika, Kuba, Kitty, Drobi, Noon, Monica, Krol, Brigadir, Tolik, Gloria, Tatiana,
+        Noodik, Kompot, Sarjik
+    }
+    private static String getName(){
+        String s = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
+        return s;
+
+    }
     public static void main(String[] args) {
 //        units.Heros monk = new units.Monk(getName());
 //        units.Heros units.peasant = new units.peasant(getName());
@@ -59,24 +68,29 @@ public class main_folder_oop {
                 case 6: team2.add(new arba(getName(), 9, new Random().nextInt(0, 50)));break;
             }
         }
-//
+
+        ArrayList<Heros> unatedTeam = new ArrayList<>();
+        unatedTeam.addAll(team1);
+        unatedTeam.addAll(team2);
+        unatedTeam.sort(((o1, o2) -> o2.getIniciative()- o1.getIniciative()));
+
         System.out.println("team1");
         team1.forEach(item -> System.out.println(item.getInfo()));
         System.out.println("team2");
         team2.forEach(item -> System.out.println(item.getInfo()));
-        team1.forEach(n -> n.Step(team2));
 
+        for (Heros item : unatedTeam) {
+            if(team1.contains(item)){
+                item.Step(team1, team2);
+            } else{
+                item.Step(team2, team1);
+            }
+            System.out.println(item.getIniciative());
+        }
+
+        System.out.println("_".repeat(20));
+        team1.forEach(item -> System.out.println(item.getInfo()));
+        System.out.println("_".repeat(12));
+        team2.forEach(item -> System.out.println(item.getInfo()));
     }
-
-
-    public enum Names {
-        Name, Loli, Kolia, name, Bara, GoldD, Monika, Kuba, Kitty, Drobi, Noon, Monica, Krol, Brigadir, Tolik, Gloria, Tatiana,
-        Noodik, Kompot, Sarjik
-    }
-    private static String getName(){
-        String s = String.valueOf(Names.values()[new Random().nextInt(Names.values().length)]);
-        return s;
-
-    }
-
 }

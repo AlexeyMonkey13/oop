@@ -28,18 +28,20 @@ public abstract class Heros implements Actions {
         return (name + " " + tipe + " " + "life" + healthLevel + " " + "iniciative" + iniciative + " " + id + " " + "atack" + BaseAttack + " " + "step" + " " +
                 step.x + " " + "step" + " " + step.y);
     }
+    public int getIniciative(){
+        return iniciative;
+    }
 
-    @Override
-    public void Step(ArrayList<Heros> namies) {
+
+    public void Step(ArrayList<Heros> namies, ArrayList<Heros> ours) {
 
     }
 
-    @Override
     public String getInfo() {
         return toString();
     }
 
-    protected int[] FindHeros(ArrayList<Heros> namies) {
+    protected Heros FindHeros(ArrayList<Heros> namies) {
         double min = 10000;
         int count = 0;
         for (int i = 0; i < namies.size(); i++) {
@@ -48,7 +50,8 @@ public abstract class Heros implements Actions {
                 count = i;
             }
         }
-        return new int[]{ (int) Math.round(min), count};
+        return namies.get(count);
+//        return new int[]{ (int) Math.round(min), count};
 
 //    protected void FindHeros(ArrayList<Heros> namies) {
 //        double min = 10000;
