@@ -9,7 +9,7 @@ public class shooters extends far_fight{
     }
 
     @Override
-    public void Step(ArrayList<Heros> namies) {
+    public void Step(ArrayList<Heros> namies,  ArrayList<Heros> ours) {
 
     }
 }

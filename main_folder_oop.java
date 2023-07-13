@@ -42,15 +42,14 @@ public class main_folder_oop {
 
         for (int i = 0; i < 6; i++){
             int j = new Random().nextInt(0, 7);
-
             switch (j){
-                case 0: team1.add(new Monk(getName(), 0, new Random().nextInt(0, 50)));break;
-                case 1: team1.add(new peasant(getName(), 0, new Random().nextInt(0, 50)));break;
-                case 2: team1.add(new Robber(getName(), 0, new Random().nextInt(0, 50)));break;
-                case 3: team1.add(new superman(getName(), 0, new Random().nextInt(0, 50)));break;
-                case 4: team1.add(new magician(getName(), 0, new Random().nextInt(0, 50)));break;
-                case 5: team1.add(new shooters(getName(), 0, new Random().nextInt(0, 50)));break;
-                case 6: team2.add(new arba(getName(), 0, new Random().nextInt(0, 50)));break;
+                case 0: team1.add(new Monk(getName(), 0, new Random().nextInt(0, 50))); break;
+                case 1: team1.add(new peasant(getName(), 0, new Random().nextInt(0, 50))); break;
+                case 2: team1.add(new Robber(getName(), 0, new Random().nextInt(0, 50))); break;
+                case 3: team1.add(new superman(getName(), 0, new Random().nextInt(0, 50))); break;
+                case 4: team1.add(new magician(getName(), 0, new Random().nextInt(0, 50))); break;
+                case 5: team1.add(new shooters(getName(), 0, new Random().nextInt(0, 50))); break;
+                case 6: team1.add(new arba(getName(), 9, new Random().nextInt(0, 50)));break;
                 }
 
 //            team1.add(allheros.get(new Random().nextInt(0, allheros.size())));

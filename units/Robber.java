@@ -9,7 +9,7 @@ public class Robber extends closery_fight{
     }
 
     @Override
-    public void Step(ArrayList<Heros> namies) {
+    public void Step(ArrayList<Heros> namies,  ArrayList<Heros> ours) {
 
     }
 }

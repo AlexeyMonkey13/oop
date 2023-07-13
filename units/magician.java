@@ -9,7 +9,7 @@ public class magician extends magic{
     }
 
     @Override
-    public void Step(ArrayList<Heros> namies) {
+    public void Step(ArrayList<Heros> namies,  ArrayList<Heros> ours) {
 
     }
 }
