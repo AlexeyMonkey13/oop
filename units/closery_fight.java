@@ -12,10 +12,10 @@ public abstract class closery_fight extends Heros {
 //        System.out.println("Length= " + tmp[0] + " enemyNames " + namies.get(tmp[1]).name);
 
     }
-    public String getInfo(){
-        return (name + " " + tipe + " " + "life" + healthLevel + " " + "iniciative" + iniciative + " "
-                + id + " " + "atack" + BaseAttack + " " + "step_x" + " "
-                + step.x + " " + "step_y" + " " + step.y);
-    }
+//    public String getInfo(){
+//        return (name + " " + tipe + " " + "life" + healthLevel + " " + "iniciative" + iniciative + " "
+//                + id + " " + "atack" + BaseAttack + " " + "step_x" + " "
+//                + step.x + " " + "step_y" + " " + step.y);
+//    }
 }
 

@@ -9,22 +9,21 @@ public abstract class far_fight extends Heros {
     }
 
     @Override
-    public String getInfo(){
-        return (name + " " + tipe + " " + "life" + healthLevel + " " + "iniciative"
-                + iniciative + " " + id + " " + "atack" + BaseAttack + " " + " shot " + shot + " " + "step_x" + " "
-                + step.x + " " + "step_y" + " " + step.y);
+    public String getInfo() {
+        return ("♡" + healthLevel + " " + "⚔" + BaseAttack +  " ➴" + shot + " " + tipe + " " + name);
     }
 
     protected int shot;
+
     @Override
     public void Step(ArrayList<Heros> namies, ArrayList<Heros> ours) {
-        if ((this.healthLevel <=0) || (this.shot == 0)) return;
+        if ((this.healthLevel <= 0) || (this.shot == 0)) return;
 
         Heros tmp = FindHeros(namies);
         tmp.healthLevel -= this.BaseAttack;
-        for (Heros item:ours) {
-            if (item.tipe.contains("peasant") && !((peasant)(item)).busy && item.healthLevel > 0){
-                ((peasant)(item)).busy = true;
+        for (Heros item : namies) {
+            if (item.tipe.contains("peasant") && !((peasant) (item)).busy && item.healthLevel > 0) {
+                ((peasant) (item)).busy = true;
                 return;
             }
         }

@@ -1,5 +1,6 @@
 package units;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 
 public abstract class Heros implements Actions {
@@ -12,6 +13,14 @@ public abstract class Heros implements Actions {
 
     protected coordinate step;
 
+    public coordinate getStep() {
+        return step;
+    }
+
+    public int getHealthLevel() {
+        return healthLevel;
+    }
+
     public Heros(int id, int healthLevel, String name, String tipe, int baseAttack, int iniciative, int x, int y) {
         this.id = id;
         this.healthLevel = healthLevel;
@@ -22,12 +31,11 @@ public abstract class Heros implements Actions {
         step = new coordinate(x, y);
     }
 
-
     @Override
     public String toString() {
-        return (name + " " + tipe + " " + "life" + healthLevel + " " + "iniciative" + iniciative + " " + id + " " + "atack" + BaseAttack + " " + "step" + " " +
-                step.x + " " + "step" + " " + step.y);
+        return super.getClass().getSimpleName();
     }
+
     public int getIniciative(){
         return iniciative;
     }
@@ -38,7 +46,7 @@ public abstract class Heros implements Actions {
     }
 
     public String getInfo() {
-        return toString();
+        return ("♡" + healthLevel + " " + "⚔" + BaseAttack + " " + tipe + " " + name);
     }
 
     protected Heros FindHeros(ArrayList<Heros> namies) {
