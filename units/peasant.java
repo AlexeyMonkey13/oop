@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class peasant extends Heros {
     public peasant(String loli, int x, int y) {super(3, 40, loli, "units.peasant",
-                0,2, x, y);
+                0,40, 2, x, y);
     }
 //    @Override
 //    public String getInfo(){
@@ -15,8 +15,9 @@ public class peasant extends Heros {
 
     boolean busy = false;
     @Override
-    public void Step(ArrayList<Heros> namies) {
+    public void Step(ArrayList<Heros> ours) {
         if (this.healthLevel > 0) this.busy = false;
+        if (this.healthLevel <= 0) return;
     }
 }
 

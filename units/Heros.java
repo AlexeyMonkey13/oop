@@ -6,10 +6,12 @@ import java.util.ArrayList;
 public abstract class Heros implements Actions {
     int id;
     int healthLevel;
+    int maximumLive;
     String name;
     String tipe;
     int BaseAttack;
     int iniciative;
+    int place;
 
     protected coordinate step;
 
@@ -21,9 +23,10 @@ public abstract class Heros implements Actions {
         return healthLevel;
     }
 
-    public Heros(int id, int healthLevel, String name, String tipe, int baseAttack, int iniciative, int x, int y) {
+    public Heros(int id, int healthLevel, String name, String tipe, int baseAttack, int maximumLive, int iniciative, int x, int y) {
         this.id = id;
         this.healthLevel = healthLevel;
+        this.maximumLive = maximumLive;
         this.name = name;
         this.tipe = tipe;
         this.BaseAttack = baseAttack;
@@ -45,6 +48,11 @@ public abstract class Heros implements Actions {
 
     }
 
+    protected void getDamage(float damage){
+        this.healthLevel-=damage;
+        if (healthLevel < 0) healthLevel = 0;
+        if(healthLevel > maximumLive) healthLevel = maximumLive;
+    }
     public String getInfo() {
         return ("♡" + healthLevel + " " + "⚔" + BaseAttack + " " + tipe + " " + name);
     }
@@ -53,12 +61,13 @@ public abstract class Heros implements Actions {
         double min = 10000;
         int count = 0;
         for (int i = 0; i < namies.size(); i++) {
-            if (step.calcCoordinate(namies.get(i).step) < min) {
+            if (step.calcCoordinate(namies.get(i).step) < min & namies.get(i).healthLevel > 0) {
                 min = step.calcCoordinate(namies.get(i).step);
                 count = i;
             }
         }
         return namies.get(count);
+
 //        return new int[]{ (int) Math.round(min), count};
 
 //    protected void FindHeros(ArrayList<Heros> namies) {

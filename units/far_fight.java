@@ -3,8 +3,8 @@ package units;
 import java.util.ArrayList;
 
 public abstract class far_fight extends Heros {
-    public far_fight(int id, int healthLevel, String name, String tipe, int baseAttack, int iniciative, int shot, int x, int y) {
-        super(id, healthLevel, name, tipe, baseAttack, iniciative, x, y);
+    public far_fight(int id, int healthLevel, String name, String tipe, int baseAttack, int maximumLive, int iniciative, int x, int y, int shot) {
+        super(id, healthLevel, name, tipe, baseAttack, maximumLive, iniciative, x, y);
         this.shot = shot;
     }
 
@@ -21,6 +21,7 @@ public abstract class far_fight extends Heros {
 
         Heros tmp = FindHeros(namies);
         tmp.healthLevel -= this.BaseAttack;
+        tmp.getDamage(this.BaseAttack);
         for (Heros item : namies) {
             if (item.tipe.contains("peasant") && !((peasant) (item)).busy && item.healthLevel > 0) {
                 ((peasant) (item)).busy = true;
