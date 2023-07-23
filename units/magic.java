@@ -29,7 +29,11 @@ public abstract class magic extends Heros {
         if (this.healthLevel > 0){
             for(Heros item : ours){
                 if (item.healthLevel > 0 & item.healthLevel < maximumLive) {
-                    this.healthLevel += this.heal;
+                    healthLevel += this.heal ;
+                    int b = this.maximumLive;
+                    if (healthLevel+this.heal >= maximumLive){
+                        maximumLive = b;
+                    }
                     System.out.println("sdf " + item.name);
                 }return;
             }
